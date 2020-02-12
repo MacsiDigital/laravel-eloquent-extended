@@ -1,0 +1,53 @@
+{
+    "name": "macsidigital/laravel-eloquent-plus",
+    "description": "Eloquent plus is a library to add some additional functions to laravel eloquent",
+    "keywords": [
+        "macsidigital",
+        "laravel-eloquent-plus"
+    ],
+    "homepage": "https://github.com/macsidigital/laravel-eloquent-plus",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Colin Hall",
+            "email": "colin@macsi.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "EloquentPlus\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EloquentPlus\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EloquentPlus\\Providers\\EloquentPlusServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    }
+}
