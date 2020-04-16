@@ -1,14 +1,14 @@
 <?php
 
-namespace EloquentPlus\Tests;
+namespace Extended\Tests;
 
-use EloquentPlus\Traits\HasContent;
-use EloquentPlus\Traits\EloquentPlus;
+use Extended\Traits\HasContent;
+use Extended\Traits\IsExtended;
 use Illuminate\Database\Eloquent\Model;
 
 class TestContentModel extends Model
 {
-	use EloquentPlus, HasContent;
+	use IsExtended, HasContent;
 
 	protected $table = 'test_models';
 

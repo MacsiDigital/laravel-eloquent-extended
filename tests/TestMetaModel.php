@@ -1,14 +1,14 @@
 <?php
 
-namespace EloquentPlus\Tests;
+namespace Extended\Tests;
 
-use EloquentPlus\Traits\HasMeta;
-use EloquentPlus\Traits\EloquentPlus;
+use Extended\Traits\HasMeta;
+use Extended\Traits\IsExtended;
 use Illuminate\Database\Eloquent\Model;
 
 class TestMetaModel extends Model
 {
-	use EloquentPlus, HasMeta;
+	use IsExtended, HasMeta;
 
 	protected $table = 'test_models';
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace EloquentPlus\Tests;
+namespace Extended\Tests;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as Orchestra;
-use EloquentPlus\Providers\EloquentPlusServiceProvider;
+use Extended\Providers\ExtendedServiceProvider;
 
 class TestCase extends Orchestra
 {   
@@ -27,7 +27,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            EloquentPlusServiceProvider::class,
+            ExtendedServiceProvider::class,
         ];
     }
 

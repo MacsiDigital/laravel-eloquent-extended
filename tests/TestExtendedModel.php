@@ -1,13 +1,13 @@
 <?php
 
-namespace EloquentPlus\Tests;
+namespace Extended\Tests;
 
-use EloquentPlus\Traits\EloquentPlus;
+use Extended\Traits\IsExtended;
 use Illuminate\Database\Eloquent\Model;
 
 class TestExtendedModel extends Model
 {
-	use EloquentPlus;
+	use IsExtended;
 
 	protected $table = 'test_models';
 

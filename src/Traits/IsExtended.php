@@ -1,10 +1,10 @@
 <?php
 
-namespace EloquentPlus\Traits;
+namespace Extended\Traits;
 
 use Illuminate\Support\Str;
 
-trait EloquentPlus
+trait IsExtended
 {
 
     public function getAttribute($key)

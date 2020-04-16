@@ -1,10 +1,10 @@
 <?php
 
-namespace EloquentPlus\Tests\Unit;
+namespace Extended\Tests\Unit;
 
-use EloquentPlus\Tests\TestCase;
+use Extended\Tests\TestCase;
 use Illuminate\Database\QueryException;
-use EloquentPlus\Tests\TestMetaModel;
+use Extended\Tests\TestMetaModel;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 

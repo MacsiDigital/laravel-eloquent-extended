@@ -1,6 +1,6 @@
 <?php
 
-namespace EloquentPlus\Traits;
+namespace Extended\Traits;
 
 use Illuminate\Support\Str;
 

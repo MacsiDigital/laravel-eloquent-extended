@@ -7,7 +7,7 @@ Extended Eloquent Models, mainly for JSON and Multi Language Content
 You can install the package via composer:
 
 ```bash
-composer require macsidigital/laravel-eloquent-plus
+composer require macsidigital/laravel-eloquent-extended
 ```
 
 ## Usage
@@ -16,12 +16,12 @@ To use extended we just need to add the trait and add a protected extendedAttrib
 
 ``` php
 
-use EloquentPlus\Traits\EloquentPlus;
+use Extended\Traits\IsExtended;
 use Illuminate\Database\Eloquent\Model;
 
 class TestExtendedModel extends Model
 {
-	use EloquentPlus;
+	use IsExtended;
 
 	protected $extendedAttributes = [
 		'test_field',
@@ -45,13 +45,17 @@ To use content is similar with the exception that we can set languages
 
 ``` php
 
-use EloquentPlus\Traits\EloquentPlus;
-use EloquentPlus\Traits\HasContent;
+use Extended\Traits\IsExtended;
+use Extended\Traits\HasContent;
 use Illuminate\Database\Eloquent\Model;
 
 class TestExtendedModel extends Model
 {
-	use EloquentPlus, HasContent;
+	use IsExtended, HasContent;
+
+	protected $extendedAttributes = [
+		'content'
+	];
 
 	protected $contentAttributes = [
 		'test_content_field',
@@ -95,13 +99,17 @@ To use meta is the same as content
 
 ``` php
 
-use EloquentPlus\Traits\EloquentPlus;
-use EloquentPlus\Traits\HasMeta;
+use Extended\Traits\IsExtended;
+use Extended\Traits\HasMeta;
 use Illuminate\Database\Eloquent\Model;
 
 class TestExtendedModel extends Model
 {
-	use EloquentPlus, HasMeta;
+	use IsExtended, HasMeta;
+
+	protected $extendedAttributes = [
+		'meta'
+	];
 
 	protected $metaAttributes = [
 		'test_meta_field',
@@ -141,7 +149,7 @@ echo $test->test_meta_field; // 'something DE'
 
 ### Testing
 
-We have a test ssuite testing our implementations, to use just run phpunit
+We have a test suite testing our implementations, to use just run phpunit
 
 ``` bash
 phpunit
@@ -158,4 +166,4 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## License
 
-This is copyrighted and cannnot be reused without permission.
+This is copyrighted and cannot be reused without permission.

@@ -1,10 +1,10 @@
 <?php
 
-namespace EloquentPlus\Providers;
+namespace Extended\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class EloquentPlusServiceProvider extends ServiceProvider
+class ExtendedServiceProvider extends ServiceProvider
 {
 
     public function boot()

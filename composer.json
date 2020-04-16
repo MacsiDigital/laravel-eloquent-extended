@@ -1,11 +1,11 @@
 {
-    "name": "macsidigital/laravel-eloquent-plus",
-    "description": "Eloquent plus is a library to add some additional functions to laravel eloquent",
+    "name": "macsidigital/laravel-eloquent-extended",
+    "description": "Eloquent extended is a library to add some additional functions to laravel eloquent",
     "keywords": [
         "macsidigital",
-        "laravel-eloquent-plus"
+        "laravel-eloquent-extended"
     ],
-    "homepage": "https://github.com/macsidigital/laravel-eloquent-plus",
+    "homepage": "https://github.com/macsidigital/laravel-eloquent-extended",
     "type": "library",
     "authors": [
         {
@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "EloquentPlus\\": "src"
+            "Extended\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "EloquentPlus\\Tests\\": "tests"
+            "Extended\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -43,7 +43,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "EloquentPlus\\Providers\\EloquentPlusServiceProvider"
+                "Extended\\Providers\\ExtendedServiceProvider"
             ],
             "aliases": {
                 
