@@ -1,4 +1,4 @@
-# Eloquent Plus Package
+# Eloquent Extended Package
 
 Extended Eloquent Models, mainly for JSON and Multi Language Content
 
