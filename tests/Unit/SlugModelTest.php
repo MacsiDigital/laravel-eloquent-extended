@@ -5,7 +5,9 @@ namespace Extended\Tests\Unit;
 use Extended\Tests\TestCase;
 use Extended\Tests\TestSlugModel;
 use Extended\Tests\TestSlugFieldModel;
+use Extended\Tests\TestSlugCustomModel;
 use Illuminate\Database\QueryException;
+use Extended\Tests\TestSlugFieldCustomModel;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class SlugModelTest extends TestCase
@@ -121,6 +123,34 @@ class SlugModelTest extends TestCase
     }
 
     /** @test */
+    public function extended_models_can_have_custom_fields()
+    {
+        $model = new TestSlugCustomModel;
+        $model->slug = 'test-slug';
+        $model->save();
+        
+        $this->assertEquals(1, TestSlugCustomModel::count());
+
+        $model->refresh();
+
+        $this->assertEquals($model->slug, 'test-slug');
+
+        $model2 = new TestSlugCustomModel;
+        $model2->createSlug('Test Custom');
+        $model2->save();
+        
+        $this->assertEquals(2, TestSlugCustomModel::count());
+
+        $model2->refresh();
+
+        $this->assertEquals($model2->slug, 'test-custom');
+
+        $foundModel = TestSlugCustomModel::withSlug('test-custom')->first();
+
+        $this->assertNotNull($foundModel);
+    }
+
+    /** @test */
     public function a_model_can_have_a_slug()
     {
         $model = new TestSlugFieldModel;
@@ -203,6 +233,34 @@ class SlugModelTest extends TestCase
         $this->assertEquals(4, TestSlugFieldModel::count());
 
         $this->assertEquals(3, TestSlugFieldModel::withoutSlug('test-slug')->count());
+    }
+
+    /** @test */
+    public function models_can_have_custom_fields()
+    {
+        $model = new TestSlugFieldCustomModel;
+        $model->slug = 'test-slug';
+        $model->save();
+        
+        $this->assertEquals(1, TestSlugFieldCustomModel::count());
+
+        $model->refresh();
+
+        $this->assertEquals($model->slug, 'test-slug');
+
+        $model2 = new TestSlugFieldCustomModel;
+        $model2->createSlug('Test Custom');
+        $model2->save();
+        
+        $this->assertEquals(2, TestSlugFieldCustomModel::count());
+
+        $model2->refresh();
+
+        $this->assertEquals($model2->slug, 'test-custom');
+
+        $foundModel = TestSlugFieldCustomModel::withSlug('test-custom')->first();
+
+        $this->assertNotNull($foundModel);
     }
 
 }

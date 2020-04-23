@@ -11,7 +11,4 @@ class TestSlugFieldModel extends Model
 
 	protected $table = 'test_slug_models';
 
-	protected $findSlugField = 'uri';
-	protected $slugField = 'uri';
-
 }
