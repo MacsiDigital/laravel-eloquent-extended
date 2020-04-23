@@ -20,7 +20,7 @@ class ContentModelTest extends TestCase
         $model->save();
 
         $model->refresh();
-
+        
         $this->assertEquals($model->test_content_field, 'Test Content Field');
     }
 

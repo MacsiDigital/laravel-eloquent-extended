@@ -43,6 +43,12 @@ class TestCase extends Orchestra
             $table->json('extended');
             $table->timestamps();
         });
+
+        Schema::create('test_slug_models', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('uri');
+            $table->timestamps();
+        });
     }
 
 }

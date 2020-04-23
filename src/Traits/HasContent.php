@@ -76,7 +76,7 @@ trait HasContent
 
     public function setContent($key, $value, $language="")
     {
-         if($language == ''){
+        if($language == ''){
             $language = $this->getContentLanguage();
         }
         return $this->setContentTranslation($key, $language, $value);  

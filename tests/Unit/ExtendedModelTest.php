@@ -7,7 +7,6 @@ use Illuminate\Database\QueryException;
 use Extended\Tests\TestExtendedModel;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-
 class ExtendedModelTest extends TestCase
 {
     use RefreshDatabase;

@@ -11,8 +11,6 @@ trait IsExtended
     {
         if(method_exists($this, 'isContentAttribute') && $this->isContentAttribute($key)){
             return $this->getContent($key);
-        } else if(method_exists($this, 'isMetaAttribute') && $this->isMetaAttribute($key)){
-            return $this->getMeta($key);
         } else if ($this->isExtendedAttribute($key)) {
             return $this->getExtended($key);    
         }
@@ -24,8 +22,6 @@ trait IsExtended
     {
         if(method_exists($this, 'isContentAttribute') && $this->isContentAttribute($key) && !is_array($value)){
             return $this->setContent($key, $value);
-        } else if(method_exists($this, 'isMetaAttribute') && $this->isMetaAttribute($key) && !is_array($value)){
-            return $this->setMeta($key, $value);
         } else if ($this->isExtendedAttribute($key) && !is_array($value)) {
             return $this->setExtended($key, $value);
         }
