@@ -7,12 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class TestExtendedModel extends Model
 {
-	use IsExtended;
+    use IsExtended;
 
-	protected $table = 'test_models';
+    protected $table = 'test_models';
 
-	protected $extendedAttributes = [
-		'test_field',
-	];
-
+    protected $extendedAttributes = [
+        'test_field',
+    ];
 }

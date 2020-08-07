@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class TestContentModel extends Model
 {
-	use IsExtended, HasContent;
+    use IsExtended, HasContent;
 
-	protected $table = 'test_models';
+    protected $table = 'test_models';
 
-	protected $contentAttributes = [
-		'test_content_field'
-	];
+    protected $contentAttributes = [
+        'test_content_field',
+    ];
 }

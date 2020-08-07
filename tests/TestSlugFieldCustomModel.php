@@ -3,16 +3,14 @@
 namespace Extended\Tests;
 
 use Extended\Traits\HasSlug;
-use Extended\Traits\HasContent;
-use Extended\Traits\IsExtended;
 use Illuminate\Database\Eloquent\Model;
 
 class TestSlugFieldCustomModel extends Model
 {
-	use HasSlug;
+    use HasSlug;
 
-	protected $table = 'test_slug_custom_models';
+    protected $table = 'test_slug_custom_models';
 
-	protected $findSlugField = 'slug';
-	protected $slugField = 'slug';
+    protected $findSlugField = 'slug';
+    protected $slugField = 'slug';
 }

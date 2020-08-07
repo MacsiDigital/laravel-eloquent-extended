@@ -3,10 +3,9 @@
 namespace Extended\Tests\Unit;
 
 use Extended\Tests\TestCase;
-use Illuminate\Database\QueryException;
 use Extended\Tests\TestContentModel;
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
 
 class ContentModelTest extends TestCase
 {
@@ -29,15 +28,16 @@ class ContentModelTest extends TestCase
     {
         $model = new TestContentModel;
         $model->not_a_test_content_field = 'Test Field';
+
         try {
             $model->save();
-        } catch(QueryException $e) {
+        } catch (QueryException $e) {
             $this->assertEquals(0, TestContentModel::count());
+
             return;
         }
 
         $this->fail('Database did not throw an exception');
-
     }
 
     /** @test */
@@ -59,5 +59,4 @@ class ContentModelTest extends TestCase
 
         $this->assertEquals($model->test_content_field, 'Test Content Field');
     }
-
 }

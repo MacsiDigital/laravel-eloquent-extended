@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TestSlugFieldModel extends Model
 {
-	use HasSlug;
+    use HasSlug;
 
-	protected $table = 'test_slug_models';
-
+    protected $table = 'test_slug_models';
 }
