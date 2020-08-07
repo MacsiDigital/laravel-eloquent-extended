@@ -1,5 +1,15 @@
 # Eloquent Extended Package
 
+## Extended model attributes
+ 
+![Header Image](https://github.com/MacsiDigital/repo-design/raw/master/laravel-eloquent-extended/header.png)
+
+<p align="center">
+ <a href="https://github.com/MacsiDigital/laravel-eloquent-extended/actions?query=workflow%3Atests"><img src="https://github.com/MacsiDigital/laravel-eloquent-extended/workflows/Run%20tests/badge.svg" style="max-width:100%;"></a>
+ <a href="https://packagist.org/packages/macsidigital/laravel-eloquent-extended"><img src="https://img.shields.io/packagist/v/macsidigital/laravel-eloquent-extended.svg?style=flat-square"/></a>
+ <a href="https://packagist.org/packages/macsidigital/laravel-eloquent-extended"><img src="https://img.shields.io/packagist/dt/macsidigital/laravel-eloquent-extended.svg?style=flat-square"/></a>
+</p>
+
 Extended Eloquent Models, mainly for JSON and Multi Language Content
 
 ## Installation
@@ -39,7 +49,7 @@ $test->test_field = 'something';
 echo $test->test_field;
 ```
 
-#### Content
+### Content
 
 To use content is similar with the exception that we can set languages
 
@@ -89,7 +99,7 @@ echo $test->test_content_field; // 'something DE'
 
 ```
 
-#### Slugs
+### Slugs
 
 We can use Mutliple Language Slugs by adding both HasContent and HasSlug traits and setting the slug fields.
 
@@ -205,36 +215,12 @@ class TestExtendedModel extends Model
 
 Then all functions will work as previous
 
-## Usage
+### Route Model Binding
 
-To use extended we just need to add the trait and add a protected extendedAttributes variable like so
+You can use {item:slug} in routes to automatically retireve items by their slug.  Jsut remember to Typehint the model in teh controller/Route action
 
-``` php
 
-use Extended\Traits\IsExtended;
-use Illuminate\Database\Eloquent\Model;
-
-class TestExtendedModel extends Model
-{
-	use IsExtended;
-
-	protected $extendedAttributes = [
-		'test_field',
-	];
-
-}
-```
-
-Once set it will act like a normal field
-
-``` php
-$test = new model;
-$test->test_field = 'something';
-
-echo $test->test_field;
-```
-
-### Testing
+## Testing
 
 We have a test suite testing our implementations, to use just run phpunit
 
@@ -242,7 +228,7 @@ We have a test suite testing our implementations, to use just run phpunit
 phpunit
 ```
 
-### Changelog
+## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 

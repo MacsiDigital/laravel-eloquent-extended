@@ -8,8 +8,15 @@ use Illuminate\Support\Arr;
 
 trait HasSlug
 {
+    public function resolveRouteBinding($value, $field = null)
+    {
+        if($field = 'slug'){
+            return $this->withSlug($value)->firstOrFail();
+        }
+        return parent::resolveRouteBinding($value, $field);
+    }
 
-	protected function generateSlug($toSlug) 
+	protected function generateSlug($toSlug)
     {
     	$slug = Str::slug($toSlug);
     	if(self::withSlug($slug)->count() > 0){
@@ -18,7 +25,7 @@ trait HasSlug
         return $slug;
     }
 
-    public function createSlug($toSlug, $language = '') 
+    public function createSlug($toSlug, $language = '')
     {
     	$field = $this->getSlugField($language);
     	$this->$field = $this->generateSlug($toSlug);
