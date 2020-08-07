@@ -3,16 +3,15 @@
 namespace Extended\Tests\Unit;
 
 use Extended\Tests\TestCase;
-use Extended\Tests\TestSlugModel;
-use Extended\Tests\TestSlugFieldModel;
 use Extended\Tests\TestSlugCustomModel;
-use Illuminate\Database\QueryException;
 use Extended\Tests\TestSlugFieldCustomModel;
+use Extended\Tests\TestSlugFieldModel;
+use Extended\Tests\TestSlugModel;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class SlugModelTest extends TestCase
 {
-	use RefreshDatabase;
+    use RefreshDatabase;
 
     /** @test */
     public function an_extended_model_can_have_a_slug()
@@ -40,8 +39,7 @@ class SlugModelTest extends TestCase
 
         $model = TestSlugModel::first();
 
-        $this->assertEquals($model->uri, 'test-slug');       
-
+        $this->assertEquals($model->uri, 'test-slug');
     }
 
     /** @test */
@@ -55,7 +53,7 @@ class SlugModelTest extends TestCase
         $model2->createSlug('Test Slug');
         $model2->save();
 
-        $this->assertEquals(2, TestSlugModel::count());        
+        $this->assertEquals(2, TestSlugModel::count());
 
         $this->assertNotEquals($model->uri, $model2->uri);
     }
@@ -175,8 +173,7 @@ class SlugModelTest extends TestCase
 
         $model = TestSlugFieldModel::first();
 
-        $this->assertEquals($model->uri, 'test-slug');       
-
+        $this->assertEquals($model->uri, 'test-slug');
     }
 
     /** @test */
@@ -190,7 +187,7 @@ class SlugModelTest extends TestCase
         $model2->createSlug('Test Slug');
         $model2->save();
         
-        $this->assertEquals(2, TestSlugFieldModel::count());        
+        $this->assertEquals(2, TestSlugFieldModel::count());
 
         $this->assertNotEquals($model->uri, $model2->uri);
     }
@@ -262,5 +259,4 @@ class SlugModelTest extends TestCase
 
         $this->assertNotNull($foundModel);
     }
-
 }

@@ -2,28 +2,27 @@
 
 namespace Extended\Tests;
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Extended\Providers\ExtendedServiceProvider;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
-{   
-
-    public function setUp() : void  
+{
+    public function setUp() : void
     {
-   	    parent::setup();
+        parent::setup();
 
-   		$this->setUpEnvironment();
+        $this->setUpEnvironment();
 
-   		$this->setUpDatabase();
+        $this->setUpDatabase();
     }
 
-   /**
-     * @param \Illuminate\Foundation\Application $app
-     *
-     * @return array
-     */
+    /**
+      * @param \Illuminate\Foundation\Application $app
+      *
+      * @return array
+      */
     protected function getPackageProviders($app)
     {
         return [
@@ -31,12 +30,11 @@ class TestCase extends Orchestra
         ];
     }
 
-    protected function setUpEnvironment() 
+    protected function setUpEnvironment()
     {
-
     }
     
-    protected function setUpDatabase() 
+    protected function setUpDatabase()
     {
         Schema::create('test_models', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -56,5 +54,4 @@ class TestCase extends Orchestra
             $table->timestamps();
         });
     }
-
 }

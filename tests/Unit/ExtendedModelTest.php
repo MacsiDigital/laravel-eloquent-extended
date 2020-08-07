@@ -3,15 +3,15 @@
 namespace Extended\Tests\Unit;
 
 use Extended\Tests\TestCase;
-use Illuminate\Database\QueryException;
 use Extended\Tests\TestExtendedModel;
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ExtendedModelTest extends TestCase
 {
     use RefreshDatabase;
 
-	/** @test */
+    /** @test */
     public function a_model_can_have_extended_attributes()
     {
         $model = new TestExtendedModel;
@@ -28,15 +28,15 @@ class ExtendedModelTest extends TestCase
     {
         $model = new TestExtendedModel;
         $model->not_a_test_field = 'Test Field';
+
         try {
-        	$model->save();
-        } catch(QueryException $e) {
-        	$this->assertEquals(0, TestExtendedModel::count());
-        	return;
+            $model->save();
+        } catch (QueryException $e) {
+            $this->assertEquals(0, TestExtendedModel::count());
+
+            return;
         }
 
         $this->fail('Database did not throw an exception');
-
     }
-
 }
