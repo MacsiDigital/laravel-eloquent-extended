@@ -6,9 +6,7 @@ use Illuminate\Support\Str;
 
 trait HasContent
 {
-    protected $language;
-
-    public function isContentAttribute($key) 
+    public function isContentAttribute($key)
     {
         return in_array($key, $this->getContentAttributes());
     }
@@ -35,7 +33,7 @@ trait HasContent
         return $this;
     }
 
-    public function updateContentTranslation($key, $language, $value) 
+    public function updateContentTranslation($key, $language, $value)
     {
         $extended = $this->extended;
         if(!isset($extended[$key])){
@@ -45,7 +43,7 @@ trait HasContent
         $this->extended = $extended;
     }
 
-    public function hasContent($key, $language="") 
+    public function hasContent($key, $language="")
     {
         if($language == ''){
             $language = $this->getContentLanguage();
@@ -57,7 +55,7 @@ trait HasContent
         return false;
     }
 
-    public function getContent($key, $language="") 
+    public function getContent($key, $language="")
     {
         if($language == ''){
             $language = $this->getContentLanguage();
@@ -79,20 +77,20 @@ trait HasContent
         if($language == ''){
             $language = $this->getContentLanguage();
         }
-        return $this->setContentTranslation($key, $language, $value);  
+        return $this->setContentTranslation($key, $language, $value);
     }
 
-    public function getContents() 
+    public function getContents()
     {
         return $this->extended;
     }
 
-    public function getContentTranslations($key) 
+    public function getContentTranslations($key)
     {
         return $this->isContentAttribute($key) ? $this->extended[$key] : [] ;
     }
 
-    public function forgetContentTranslation($key, $language) 
+    public function forgetContentTranslation($key, $language)
     {
         if($this->isContentAttribute($key) && $this->hasContent($key, $language)){
             $extended = $this->extended;
@@ -102,7 +100,7 @@ trait HasContent
         return $this;
     }
 
-    public function forgetContentTranslations($language) 
+    public function forgetContentTranslations($language)
     {
         foreach($this->getContentAttributes() as $key){
             $this->forgetContentTranslation($key, $language);
@@ -110,29 +108,29 @@ trait HasContent
         return $this;
     }
 
-    public function setContentTranslations($key, array $values) 
+    public function setContentTranslations($key, array $values)
     {
         if($this->isContentAttribute($key)){
             foreach($values as $language => $value){
                 $this->setContent($key, $language, $value);
-            }     
+            }
         }
         return $this;
     }
 
     public function getContentLanguage()
     {
-        return $this->language != '' ? $this->language : \App::getLocale();
+        return \App::getLocale();
     }
 
     public function setContentLanguage($language)
     {
-        $this->language = $language;
+        \App::setLocale($language);
     }
 
     public function resetContentLanguage($language)
     {
-        $this->language = '';
+        \App::setLocale(config('app.locale', config('app.fallback_locale')));
     }
 
 }
