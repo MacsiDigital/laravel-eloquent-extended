@@ -9,7 +9,7 @@ trait HasSlug
 {
     public function resolveRouteBinding($value, $field = null)
     {
-        if ($field = 'slug') {
+        if ($field == 'slug') {
             return $this->withSlug($value)->firstOrFail();
         }
 
