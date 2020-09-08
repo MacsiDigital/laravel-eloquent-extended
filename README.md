@@ -5,12 +5,16 @@
 ![Header Image](https://github.com/MacsiDigital/repo-design/raw/master/laravel-eloquent-extended/header.png)
 
 <p align="center">
- <a href="https://github.com/MacsiDigital/laravel-eloquent-extended/actions?query=workflow%3Atests"><img src="https://github.com/MacsiDigital/laravel-eloquent-extended/workflows/Run%20tests/badge.svg" style="max-width:100%;"></a>
- <a href="https://packagist.org/packages/macsidigital/laravel-eloquent-extended"><img src="https://img.shields.io/packagist/v/macsidigital/laravel-eloquent-extended.svg?style=flat-square"/></a>
- <a href="https://packagist.org/packages/macsidigital/laravel-eloquent-extended"><img src="https://img.shields.io/packagist/dt/macsidigital/laravel-eloquent-extended.svg?style=flat-square"/></a>
+ <a href="https://github.com/MacsiDigital/laravel-eloquent-extended/actions?query=workflow%3Atests"><img src="https://github.com/MacsiDigital/laravel-eloquent-extended/workflows/Run%20tests/badge.svg" style="max-width:100%;" alt="tests badge"></a>
+ <a href="https://packagist.org/packages/macsidigital/laravel-eloquent-extended"><img src="https://img.shields.io/packagist/v/macsidigital/laravel-eloquent-extended.svg?style=flat-square" alt="version badge"/></a>
+ <a href="https://packagist.org/packages/macsidigital/laravel-eloquent-extended"><img src="https://img.shields.io/packagist/dt/macsidigital/laravel-eloquent-extended.svg?style=flat-square" alt="downloads badge"/></a>
 </p>
 
 Extended Eloquent Models, mainly for JSON and Multi Language Content
+
+## Support us
+
+We invest a lot in creating [open source packages](https://macsidigital.co.uk/open-source), and would be grateful for a [sponsor](https://github.com/sponsors/MacsiDigital) if you make money from your product that uses them.
 
 ## Installation
 
@@ -101,7 +105,7 @@ echo $test->test_content_field; // 'something DE'
 
 ### Slugs
 
-We can use Mutliple Language Slugs by adding both HasContent and HasSlug traits and setting the slug fields.
+We can use Multiple Language Slugs by adding both HasContent and HasSlug traits and setting the slug fields.
 
 ``` php
 
@@ -124,7 +128,7 @@ class TestExtendedModel extends Model
 }
 ```
 
-You can then add a uri like so
+You can then add the uri like so
 
 ``` php
 $test = new model;
@@ -167,7 +171,7 @@ echo $test->uri; // 'something-de'
 
 ```
 
-We can then retrieve by slug with the withSlug scoped query method
+We can then retrieve by the slug with the withSlug scoped query method
 
 ``` php
 $test = new model;
@@ -217,7 +221,7 @@ Then all functions will work as previous
 
 ### Route Model Binding
 
-You can use {item:slug} in routes to automatically retireve items by their slug.  Jsut remember to Typehint the model in teh controller/Route action
+You can use {item:slug} in routes to automatically retrieve items by their slug.  Just remember to Typehint the model in the controller/Route action.
 
 
 ## Testing
@@ -225,18 +229,27 @@ You can use {item:slug} in routes to automatically retireve items by their slug.
 We have a test suite testing our implementations, to use just run phpunit
 
 ``` bash
-phpunit
+composer test
 ```
 
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## Security
+
+If you discover any security-related issues, please email [info@macsi.co.uk](mailto:info@masi.co.uk) instead of using the issue tracker.
+
 ## Credits
 
-- [Colin Hall](https://github.com/colinhall17)
+- [Colin Hall](https://github.com/ColinHall)
+- [MacsiDigital](https://github.com/MacsiDigital)
 - [All Contributors](../../contributors)
 
 ## License
 
-This is copyrighted and cannot be reused without permission.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

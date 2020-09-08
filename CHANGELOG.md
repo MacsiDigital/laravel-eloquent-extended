@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-eloquent-extended` will be documented in this file
 
+## 1.2.0 - 2020-09-08
+
+- Laravel 8.0
+
 ## 1.1.2 - 2020-04-23
 
 - add default fields for slugs of 'uri' and 'extended->uri';
