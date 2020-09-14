@@ -87,4 +87,9 @@ trait HasSlug
 
         return $field;
     }
+
+    protected function getSlugAttribute()
+    {
+        return $this->{$this->getSlugField()};
+    }
 }
