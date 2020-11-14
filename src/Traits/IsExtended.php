@@ -91,4 +91,8 @@ trait IsExtended
             ['extended' => 'array']
         );
     }
+
+    public function scopeExtended($query, $content, $operator, $value=null){
+        return $query->where('extended->'.$content, $operator, $value);
+    }
 }
