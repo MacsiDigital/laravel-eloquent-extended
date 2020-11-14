@@ -141,7 +141,8 @@ trait HasContent
         \App::setLocale(config('app.locale', config('app.fallback_locale')));
     }
 
-    public function scopeContent($query, $content, $operator, $value=null){
+    public function scopeContent($query, $content, $operator, $value = null)
+    {
         return $query->where('extended->'.$content.'->'.$this->GetContentLanguage(), $operator, $value);
     }
 }
