@@ -21,7 +21,7 @@ trait IsExtended
     {
         if (method_exists($this, 'isContentAttribute') && $this->isContentAttribute($key) && ! is_array($value)) {
             return $this->setContent($key, $value);
-        } elseif ($this->isExtendedAttribute($key) && ! is_array($value)) {
+        } elseif ($this->isExtendedAttribute($key)) {
             return $this->setExtended($key, $value);
         }
 
